@@ -1,0 +1,67 @@
+# general
+0 : 1.0 # ignore (place holder)
+
+
+# spo_1
+1 : 1.0 # direct
+2 : 0.5 # with case to, from, with
+3 : 0.5 # acl with verb
+4 : 0.5 # PRP with inserted predicate
+5 : 0.5 # with ccomp/xcomp
+
+# spo_2
+10 : 1.0 # direct call to spo_1
+11 : 0.8 # 1 conj
+12 : 0.7 # 2xconj
+13 : 0.7 # conj + obl
+14 : 0.6 # conj + obj + conj
+15 : 0.8 # conj + conj(pred) + token
+16 : 0.8 # conj + conj(pred) + conj
+17 : 0.8 # with coref
+17 : 0.8# with coref as noun
+
+# spo_3
+31 : 1.0 # direct call to spo_1
+32 : 0.9 # through conj or coref
+
+# spo_q
+21 : 1.0 # direct subj,obj,obl
+22 : 0.8 # through acl
+23 : 0.7 # through acl w case/nmod
+24 : 0.7 # combining 2 SPOs
+25 : 0.6 # combining 2 SPOs w mod
+26 : 0.6 # combining 2 SPOs w case
+
+# phrase_
+301 : 0.6 # noun
+302 : 0.9 # compound
+303 : 0.7 # compound + conj
+304 : 0.7 # compound + conj ending on NNS
+305 : 0.7 # amods + conj
+306 : 0.9 # compound list
+307 : 0.8 # amod / acl
+308 : 0.9 # amod + compound
+309 : 0.9 # amods
+310 : 0.9 # nmod + case
+311 : 0.9 # nmod + compounds
+312 : 0.8 # conj + acl
+313 : 0.6 # dep (unknown)
+314 : 0.7 # multiple mods
+
+
+# direction
+400 : 1.0 # POS=IN,TO
+
+# focus
+410 : 1.0 # he, she, etc
+411 : 1.0 # PRP tag
+
+
+# program/service
+420 : 1.0 # spo + nouns
+421 : 1.0 # program as pnoun+noun + "offers"
+422 : 1.0 # service as pnoun+noun + "offers"
+
+430: 1.0 # amod
+431 : 1.0 # nmod
+432 : 1.0 # aclx

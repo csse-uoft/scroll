@@ -1,0 +1,84 @@
+# test conjunctions across subjects, predicates, and objects
+# Subjects: Bob Smith, Mary Johnson, poultry farmers
+	# Predicates 1 : went
+	# Objects    1 : grocery store, downtown summer park
+	# Predicates 2 : drove
+	# Objects    2 : picnic table, urban hospital, shopping centre
+Bob Smith and Mary Johnson, farm animals and poultry farmers went to the grocery store, downtown summer park, then drove to the picnic table, urban hospital, and shopping centre.
+
+
+# test co-references
+# he = Tom Smith
+# she = Mary Johnson
+# their = Bob Smith, Mary Johnson
+# we're = none
+Bob Smith and Mary Johnson are good friends, and he is happy she is here, in their home, while there's good weather in the city's centre when we're in the country.
+
+# test co-references and predicates
+# Subject 1 : she = Mary Johnson
+	# Predicate: attended
+	# night classes
+# Subject 2: he = Tom Smith
+	# Predicate: attended
+	# day classes
+The Beach Hebrew Institute provided education services to Mary Johnson and John Smith, where she attended all night classes and he attended all day classes. 
+
+
+# test possessive SPO: reordered subjects, predicates, and objects
+# Subject   : The Lady Mother Program
+# Predicate : offered
+# Object    : mental health services
+The mental health services are offered by The Lady Mother Program.
+
+# test possessive SPO: reordered subjects, predicates, and objects with conjunctions
+# Subject   : The Lady Mother Program
+# Predicate : offered
+# Object    : mental health services, laundry facilities, women family services, men family services
+The mental health services and laundry facilities, as well as women and men family services, giving clients a new start on life, are offered by The Lady Mother Program.
+
+
+# test finding SPO qualifiers
+# Subject   : St Mary's Church
+# Predicate : 
+# Subjects: Bob Smith, Mary Johnson, poultry farmers
+	# Predicates 1 : went
+	# Objects    1 : grocery store, downtown summer park
+	# Qualified Predicates : drove
+	# Qualified Objects    : picnic table, urban hospital, shopping centre
+Bob Smith and Mary Johnson, farm animals and poultry farmers went to the grocery store, downtown summer park, then drove to the picnic table, urban hospital, and shopping centre.
+
+
+# test finding qualifiers and reversed SPO controlled by a prepositions:
+# Subject   : annual city market
+# Predicate : offers
+# Object    : fresh produce
+# Qualifier Predicate: with/to/for
+# Qualifier Object : local families
+# Preposition: "with"
+The annual city market offers local families with fresh produce.
+# reposition "to":
+The annual city market offers fresh produce to local families.
+# test finding non-reversed SPO with a preposition "for":
+The annual city market offers fresh produce for local families.
+
+
+# test identifying demographics by finding qualified objects
+# Demographic: local families
+The annual city market offers local families with fresh produce.
+The annual city market offers fresh produce to local families.
+The annual city market offers fresh produce for local families.
+
+# test identifying demographics through "receiving" wording
+# Demographic: Albertans age 65 and older
+Alberta Health provides annual financial coverage for a standard eye exam for all Albertans age 65 and older.
+# Demographics: Veterans, Veteran's families
+The Legion also provides representation to Veterans and their families.
+
+
+
+# test program-predicate-service triple
+# Subject   : The Lady Mother Program
+# Predicate : offered
+# Object    : mental health services
+The The Lady Mother Program offers mental health services.
+The mental health services are offered by The Lady Mother Program.
