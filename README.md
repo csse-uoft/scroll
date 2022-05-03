@@ -14,13 +14,13 @@ The SCROLL project includes the following modules:
 
 ### 2. Install StanfordCoreNLP packages
   - `cd corenlp`
+  - `chmod +x nlp_server.sh`
   - `curl https://downloads.cs.stanford.edu/nlp/software/stanford-corenlp-4.3.1.zip > stanford-corenlp-4.3.1.zip`
-  - `open corenlp/stanford-corenlp-4.3.1.zip`
+  - `open stanford-corenlp-4.3.1.zip`
   - `curl https://downloads.cs.stanford.edu/nlp/software/stanford-parser-4.2.0.zip > stanford-parser-4.2.0.zip`
   - `open stanford-parser-4.2.0.zip`
   - `cd ..`
-
-  - `chmod +x corenlp/nlp_server.sh`
+  
 
 
 ### 3. Install Prolog
@@ -37,8 +37,9 @@ The SCROLL project includes the following modules:
 - `python -i run_unit_tests.py`
 
 ### 3. Load own file 
-- create and place in `output/<file_prefix>/input`
+- create and place in `output/<file_prefix>/input/input_file.csv`
 
+       file_prefix = 'my_data_source'
        filename = 'output/%s/input/input_file.csv'%(file_prefix)
        posp = POSProcesses(col='Description', program_name=Program Name')
        posp.load_compass_paragraphs(
