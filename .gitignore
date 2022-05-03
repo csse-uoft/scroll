@@ -1,5 +1,5 @@
 output/*
-corenlp/*
+corenlp/stanford*
 .DS_Store
 init_*.py
 # Byte-compiled / optimized / DLL files
