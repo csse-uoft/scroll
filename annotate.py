@@ -6,6 +6,7 @@ import tqdm
 import copy
 import pandas as pd
 import itertools
+
 import nltk
 import spacy
 import pickle
@@ -26,6 +27,7 @@ lemmatizer = WordNetLemmatizer()
 from nltk.stem.snowball import SnowballStemmer
 stemmer = SnowballStemmer("english")
 from nltk.corpus import stopwords
+
 STOPWORDS = stopwords.words('english')
 
 from sklearn import metrics

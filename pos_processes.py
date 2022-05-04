@@ -280,7 +280,6 @@ class POSProcesses:
 
         # start coref server
         nlp = StanfordCoreNLP('http://localhost',9000)
-
         # step 1: clean data
         self.clean_sentences()
 
