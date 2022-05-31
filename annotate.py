@@ -74,11 +74,11 @@ class Annotate:
         df = annot.annotations.copy()
         df['N'] = 1
         score_cols,mapping,_,_ = annot.score_cols_and_mapping()
-        savedir = 'output/'+annot.file_prefix+'/models/'
+        # savedir = 'output/'+annot.file_prefix+'/models/'
 
         unique_cat = list(mapping.keys())
         unique_cat.sort()
-        colors = {'correct': 'g', 'incorrect': 'r'}
+        # colors = {'correct': 'g', 'incorrect': 'r'}
         col = 'mcc'
         # fig,ax = plt.subplots(3,3, figsize=(8,8))
         # fig.suptitle("NER Hypothesis Evaluation")
