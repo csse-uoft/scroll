@@ -6,6 +6,7 @@ import tqdm
 import copy
 import pandas as pd
 import itertools
+
 import nltk
 import spacy
 import pickle
@@ -26,6 +27,7 @@ lemmatizer = WordNetLemmatizer()
 from nltk.stem.snowball import SnowballStemmer
 stemmer = SnowballStemmer("english")
 from nltk.corpus import stopwords
+
 STOPWORDS = stopwords.words('english')
 
 from sklearn import metrics
@@ -72,11 +74,11 @@ class Annotate:
         df = annot.annotations.copy()
         df['N'] = 1
         score_cols,mapping,_,_ = annot.score_cols_and_mapping()
-        savedir = 'output/'+annot.file_prefix+'/models/'
+        # savedir = 'output/'+annot.file_prefix+'/models/'
 
         unique_cat = list(mapping.keys())
         unique_cat.sort()
-        colors = {'correct': 'g', 'incorrect': 'r'}
+        # colors = {'correct': 'g', 'incorrect': 'r'}
         col = 'mcc'
         # fig,ax = plt.subplots(3,3, figsize=(8,8))
         # fig.suptitle("NER Hypothesis Evaluation")

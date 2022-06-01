@@ -280,7 +280,6 @@ class POSProcesses:
 
         # start coref server
         nlp = StanfordCoreNLP('http://localhost',9000)
-
         # step 1: clean data
         self.clean_sentences()
 
@@ -304,7 +303,7 @@ class POSProcesses:
             res = self.combine_resolved_coref(output)
             # _=[print(r) for r in res if r[2] == 1]
             # text2 = ''.join([r[1] for r in res])
-            text_corefs = ''.join([r[3] for r in res])
+            # text_corefs = ''.join([r[3] for r in res])
 
             # generate triples
             triples =list(enumerate(self.resolved_to_triples(output)))
@@ -318,7 +317,7 @@ class POSProcesses:
             triples1 = self.resolve_triples(triples,res,which='left')
             tmp1 = self.replace_resolved_triples(triples,triples1)
             triples_1 = tmp1['triples']
-            replaced_triples_1 = tmp1['replaced']
+            # replaced_triples_1 = tmp1['replaced']
 
             triples2 = self.resolve_triples(triples_1,res,which='right')
             tmp2 = self.replace_resolved_triples(triples_1,triples2)
@@ -355,7 +354,7 @@ class POSProcesses:
         with open(filename) as f:
             self.sentences = f.readlines()
         self.sentences = [s.strip() for s in self.sentences if len(s.strip()) > 0 and s.strip()[0] != '#']
-        self.sentences = pd.DataFrame(list(enumerate(self.sentences)),columns=['idx','Text'])
+        self.sentences = pd.DataFrame(list(enumerate(self.sentences))[:min(100, len(self.sentences))], columns=['idx','Text'])
 
         self.sentences.to_csv(res_directory+'sentences.csv',index=False)
         # file[['Name']].loc[idx].to_csv(res_directory+'program_names.csv', index=True)
