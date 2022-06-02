@@ -342,7 +342,7 @@ class POSProcesses:
 
 
 
-    def load_test_sentences(self,filename='output/test_sentences.txt', file_prefix = "test"):
+    def load_test_sentences(self, num_to_read, filename='output/test_sentences.txt', file_prefix = "test"):
         self.file_prefix = file_prefix
         directory = 'output/'+file_prefix
         if not os.path.exists(directory):
@@ -354,7 +354,7 @@ class POSProcesses:
         with open(filename) as f:
             self.sentences = f.readlines()
         self.sentences = [s.strip() for s in self.sentences if len(s.strip()) > 0 and s.strip()[0] != '#']
-        self.sentences = pd.DataFrame(list(enumerate(self.sentences))[:min(100, len(self.sentences))], columns=['idx','Text'])
+        self.sentences = pd.DataFrame(list(enumerate(self.sentences))[:min(num_to_read, len(self.sentences))], columns=['idx','Text'])
 
         self.sentences.to_csv(res_directory+'sentences.csv',index=False)
         # file[['Name']].loc[idx].to_csv(res_directory+'program_names.csv', index=True)

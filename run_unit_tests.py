@@ -27,8 +27,9 @@ if True:
     col = 'Description'
     program_name = 'Program Name'
     if True:
+        num_to_read = 100
         posp = POSProcesses(col=col, program_name=program_name)
-        posp.load_test_sentences(filename='output/alberta_full.csv', file_prefix='alberta_output')
+        posp.load_test_sentences(num_to_read, filename='output/alberta_full.csv', file_prefix='alberta_output')
         # posp.clean_sentences()  # Duplicate in build_prolog_files()
         posp.build_prolog_files()
         posp.run_tests()
@@ -37,7 +38,7 @@ if True:
         filehandler = open('output/%s/models/posp_processes.pkl'%(posp.file_prefix), 'wb')
         pickle.dump(posp, filehandler)
     else:
-        file_prefix='alberta_output'
+        file_prefix='unit_test'
         filehandler = open('output/%s/models/posp_processes.pkl'%(file_prefix), 'rb')
         posp = pickle.load(filehandler)
 

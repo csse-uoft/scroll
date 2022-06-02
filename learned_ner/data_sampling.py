@@ -44,7 +44,7 @@ def format_json(data):
 
 
 if __name__ == '__main__':
-    n = 20
+    n = 100
     seed = 3
     # unit_test_sentences = pd.read_csv("sentences.csv")['Text']
     alberta_samples = sample_data(n, seed, "../../Alberta full data set 2.csv", ["Description"])
