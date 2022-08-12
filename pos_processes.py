@@ -18,8 +18,9 @@ from ranking_builder import *
 
 
 class POSProcesses:
-    def __init__(self, col='Description', program_name='Name'):
-        _ = os.makedirs('output') if not os.path.exists('output') else None        
+    def __init__(self, col='Description', program_name='Name', dep_parser='basic'):
+        _ = os.makedirs('output') if not os.path.exists('output') else None
+        self.dep_parser = dep_parser
         self.deps = []
         self.sentences = None
 
@@ -63,13 +64,17 @@ class POSProcesses:
         return '#DEL#'.join([s for s in res if s is not None])
 
     def resolved_to_triples(self,corenlp_output):
+        parser_detail = {
+            "basic"       : "basicDependencies",
+            "enhanced"    : "enhancedDependencies",
+            "enhancedpp"  : "enhancedPlusPlusDependencies"}[self.dep_parser]
+
+
         triples = []
         prev_i_max = -1
         i_offset = 0
         for sent in corenlp_output['sentences']:
-            # deps = sent['enhancedPlusPlusDependencies']
-            # deps = sent['enhancedDependencies']
-            deps = sent['basicDependencies']
+            deps = sent[parser_detail]
             tokens = sent['tokens']
             for v in deps:
                 w1 = v['governorGloss']

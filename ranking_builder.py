@@ -2042,30 +2042,6 @@ class HypothesisBuilder:
 
         #####################################################
 
-class TreeParser:
-    def __init__(self, posp=None):
-        self.posp = posp
-        self.directory = 'output/%s/tree/'%self.posp.file_prefix
-        self.sentences = self.posp.sentences
-        self.sdp = StanfordDependencyParser(
-            path_to_jar = 'corenlp/stanford-parser-full-2020-11-17/stanford-parser.jar',
-            path_to_models_jar = 'corenlp/stanford-parser-full-2020-11-17/stanford-parser-4.2.0-models.jar')
-
-    def draw_sentences(self):
-        for label,text in tqdm.tqdm(self.sentences.values):
-            self.draw(text=text,label=label)
-
-    def draw(self, label, text, view=False):
-        _ = os.makedirs(self.directory) if not os.path.exists(self.directory) else None
-        for i,sentence in enumerate(sent_tokenize(text)):
-            filename = "tree_%s_%s"%(label,i)
-            result = list(self.sdp.raw_parse(sentence))
-            dep_tree_dot_repr = [parse for parse in result][0].to_dot()
-            source = Source(dep_tree_dot_repr, format="pdf")
-            source.render(directory=self.directory, filename=filename)
-            os.remove(self.directory+filename)
-            if view:
-                source.view()
 
 
 
