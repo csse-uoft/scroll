@@ -5,6 +5,7 @@
 The SCROLL project includes the following modules:
 - NER model for extracting terms from descriptions of social purpose organizations
 - Narrative building model from semantic roles
+- Citation: Gajderowicz, B., Rosu, D., & Fox, M. S. (2022). Compass Event , Client , and Service Ontology : A Design Pattern for Social Services. The Eighth Joint Ontology Workshops (JOWO’22), CEUR Workshop Proceedings, 1--12.
 
 
 
